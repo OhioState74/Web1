@@ -1,0 +1,54 @@
+{% extends "firstapp/base.html" %}
+{% block title  %} Index {% endblock title  %}
+{% block header  %} Главная страница {% endblock header  %}
+{% block content  %}
+
+    <p> анализ возраста клиента </p>
+    {%  if age > 65 %}
+        <P> клиент достиг пенсонного возраста</P>
+    {% else %}
+        <p> клиент не является пенсионером</p>
+    {%  endif %}
+
+
+
+    <p> категория продуктов</p>
+
+    {%  for i in cat %}
+    <li>{{ i }}</li>
+
+        {%  empty %}
+        <LI> категории продуктов отсутствуют</LI>
+ {% endfor %}
+        {%  with name="LIDO" nom=1 %}
+        <div>
+        <P>  in store open restaurant </P>
+         </div>
+{%  endwith %}
+
+{% endblock content  %}
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Формы Django</title>#}
+{#</head>#}
+{#<body>#}
+{#    <form method="POST">#}
+{#        {% csrf_token %}#}
+{#<table>#}
+{#    {{ form }}#}
+{#</table>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}
+{##}
+
+
+
+
+
+
+
+

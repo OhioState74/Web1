@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!--Это встроенный стиль -->
+    <style>h1{color:green;}</style>
+    <meta charset="UTF-8">
+    <title>Привет DJANGO</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1> домашняя страница Django</h1>
+<h2> templates/firstapp/home.http</h2>
+<img src="{% static 'images/IMG_1.jpg' %}">
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+<form method="POST" action="create/">
+    {% csrf_token %}
+    <p>
+        <label> Введите имя</label><br>
+        <input type="text" name="name" />
+    </p>
+    <p>
+        <label> введите возраст</label><br>
+        <input type="text" name="age" />
+    </p>
+    <input type="submit" value="сохранить">
+
+</form>
+
+{% if people.count > 0  %}
+<h2> Список пользователей </h2>
+<table>
+    <tr><th> ID </th><th> Имя </th><th> Возраст </th><tr/>
+    {% for person in people %}
+    <tr><td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td></tr>
+        <td> <a href="edit/{{ person.id }}" >Изменить</a>
+             <a href="delete/{{ person.id }}" >Удалить</a>
+        </td>
+        {% endfor %}
+</table>
+        {% endif %}
+
+
+</body>
+</html>
+
+
+
+
+{#<h1>{{ header }}</h1>#}
+{#<p> Имя: {{ user.name }}  Age: {{ user.age }}</p>#}
+{#<p>Адресс: {{ address.0 }}, дом. {{ address.1 }}, кв. {{ address.2 }}</p>#}
+{#<p>владеет языками: {{ langs.0 }}, {{ langs.1 }}, {{ langs.2 }}</p>#}
+{#</body>#}
+{#</html>#}
